@@ -26,11 +26,11 @@ python scraping_latest_news.py
 [10 / 10] (December 19, 2018) Militarization Fails to Enhance Police Safety or Reduce Crime but May Harm Police Reputation
 ```
 
-Get news urls from specific pages
+특정한 페이지를 parse하기 위해서는
 
 ```python
-from whitehouse_scraper import parse_page
-from whitehouse_scraper import get_allnews_urls
+from Cato_scraper import parse_page
+from Cato_scraper import get_allnews_urls
 
 urls = get_allnews_urls(begin_page=1, end_page=3, verbose=True)
 for url in urls[:3]:
