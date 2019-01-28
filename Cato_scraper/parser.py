@@ -22,13 +22,15 @@ def parse_page(url):
 
     try:
         soup = get_soup(url)
-        title = soup.find('h1', class_= 'page-h1')
-        time = soup.find('div', class_= 'field-date').text
+        title = soup.find('h1', class_= 'page-h1').text
+        time = soup.find('div', class_= 'field-date').text[1:-1]
         content = soup.find('div', class_= 'field-body').text
+        author = soup.find('div', id = 'pub-authors').text[6:]
 
         json_object = {
             'title' : title,
             'time' : time,
+            'author' :author,
             'content' : content,
             'url' : url,
             'scrap_time' : now()
