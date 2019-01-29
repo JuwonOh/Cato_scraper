@@ -1,6 +1,6 @@
 # Cato_scraper
 
-미국의 씽크탱크인(United State Department of Defense)의 자료들(Survey Reports을 제외한 나머지)을 받아오기 위한 크롤러입니다.
+미국의 씽크탱크인 Cato institute의 자료들(Survey Reports을 제외한 나머지)을 받아오기 위한 크롤러입니다.
 
 ## User guide
 
