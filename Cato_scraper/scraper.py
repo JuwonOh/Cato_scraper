@@ -60,7 +60,7 @@ def yield_latest_allnews(begin_date, max_num=10, sleep=1.0):
             news_json = parse_page(url)
 
             # check date
-            d_news = strf_to_datetime(news_json['time'], news_dateformat)
+            d_news = strf_to_datetime(news_json['date'], news_dateformat)
             if d_begin > d_news:
                 outdate = True
                 print('Stop scrapping. {} / {} news was scrapped'.format(n_news, max_num))

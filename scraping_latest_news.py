@@ -5,11 +5,10 @@ from Cato_scraper import yield_latest_allnews
 from Cato_scraper import strf_to_datetime
 from Cato_scraper import news_dateformat
 
-
 def save(json_obj, directory):
     url = json_obj['url']
     category, title = [p for p in url.split('/') if p][-2:]
-    dt = strf_to_datetime(json_obj['time'], news_dateformat)
+    dt = strf_to_datetime(json_obj['date'], news_dateformat)
     name = '{}-{}-{}_{}_{}'.format(dt.year, dt.month, dt.day, category, title[:50])
     filepath = '{}/{}.json'.format(directory, name)
     with open(filepath, 'w', encoding='utf-8') as fp:
@@ -28,7 +27,7 @@ def scraping(begin_date, max_num, sleep, directory, verbose):
 
         if verbose:
             title = json_obj['title']
-            time = json_obj['time']
+            time = json_obj['date']
             print('[{} / {}] ({}) {}'.format(i+1, max_num, time, title))
 
     if n_exceptions > 0:
