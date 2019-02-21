@@ -12,29 +12,19 @@ parser는 이렇게 만들어진 url리스트를 통해서 각 분석들의 제�
 ```
 python scraping_latest_news.py
 ```
-
+특정한 페이지를 parse하기 위해서는 yield_latest_report를 사용하세요.
 ```
-[1 / 10] (January 23, 2019) Temporary Protected Status and Immigration to the United States
-[2 / 10] (January 22, 2019) How ‘Market Failure’ Arguments Lead to Misguided Policy
-[3 / 10] (January 16, 2019) Do 40-Year-Old Facts Still Matter?: Long-Run Effects of Federal Oversight under the Voting Rights Act
-[4 / 10] (January 15, 2019) Do Immigrants Import Terrorism?
-[5 / 10] (January 15, 2019) The Myth of the Cyber Offense: The Case for Restraint
-[6 / 10] (January 9, 2019) More Legislation, More Violence? The Impact of Dodd-Frank in the Democratic Republic of the Congo
-[7 / 10] (January 8, 2019) The Case for an Immigration Tariff: How to Create a Price-Based Visa Category
-[8 / 10] (January 2, 2019) The Spread of Deposit Insurance and the Global Rise in Bank Asset Risk since the 1970s
-[9 / 10] (December 19, 2018) How Legalizing Marijuana Is  Securing the Border: The Border Wall, Drug Smuggling, and Lessons for Immigration Policy
-[10 / 10] (December 19, 2018) Militarization Fails to Enhance Police Safety or Reduce Crime but May Harm Police Reputation
-```
+[1 / 10] (20190214) Building an Effective and Practical National Approach to Terrorism Prevention
+[2 / 10] (20190214) Educator Access to and Use of Data Systems
+[3 / 10] (February 20, 2019) Opioids and a Crisis of Unintended Consequences
+[4 / 10] (February 19, 2019) Book Review: 'The Woman Who Smashed Codes' by Jason Fagone
+[5 / 10] (20190220) Public Acceptability of Health and Social Care Funding Options
+[6 / 10] (20190219) Functional Limitations and Employment Among Disability Benefit Recipients with Musculoskeletal Conditions
+[7 / 10] (20190218) Science-Based Scenario Design
+[8 / 10] (20190218) Assessing Retention and Special and Incentive Pays for Army and Navy Commissioned Officers in the Special Operations Forces
+[9 / 10] (20190215) Market Power and Price Discrimination in the US Market for Higher Education
+[10 / 10] (20190215) Organising for excellence
 
-특정한 페이지를 parse하기 위해서는
-
-```python
-from Cato_scraper import parse_page
-from Cato_scraper import get_allnews_urls
-
-urls = get_allnews_urls(begin_page=1, end_page=3, verbose=True)
-for url in urls[:3]:
-    json_object = parse_page(url)    
 ```
 
 ## 참고 코드
