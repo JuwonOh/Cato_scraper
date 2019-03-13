@@ -1,5 +1,6 @@
 from .utils import get_soup
 from .utils import now
+from dateutil.parser import parse
 
 def parse_page(url):
     if '/public-opinion-brief/' in url:
@@ -26,7 +27,7 @@ def parse_normal(url):
         date = soup.find('span', class_='date-display-single')
         if not date:
             return ''
-        return date.text
+        return parse(date.text)
 
     def parse_content(soup):
         content = soup.find('div', class_= 'field-body')
@@ -40,7 +41,8 @@ def parse_normal(url):
         'title': parse_title(soup),
         'date': parse_date(soup),
         'author': parse_author(soup),
-        'content': parse_content(soup)
+        'content': parse_content(soup),
+        'scraping_date': now()
     }
 
 def parse_opinion(url):
@@ -60,7 +62,7 @@ def parse_opinion(url):
         date = soup.find('div', class_='field-source-info')
         if not date:
             return ''
-        return date.text[5:-101]
+        return parse(date.text[5:-101])
 
     def parse_content(soup):
         temp_content = soup.find_all('p')
@@ -75,5 +77,6 @@ def parse_opinion(url):
         'title': parse_title(soup),
         'date': parse_date(soup),
         'author': parse_author(soup),
-        'content': parse_content(soup)
+        'content': parse_content(soup),
+        'scraping_date': now()
     }

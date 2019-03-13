@@ -4,9 +4,6 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from time import gmtime, strftime
 
-news_dateformat = '%B %d, %Y'
-user_dateformat = '%Y-%m-%d'
-
 def now():
     """
     Returns
@@ -47,6 +44,3 @@ def normalize_text(text):
     text = lineseparator_pattern.sub('\n', text)
     text = doublespace_pattern.sub(' ', text)
     return text.strip()
-
-def strf_to_datetime(strf, form):
-    return datetime.strptime(strf, form)
